@@ -60,6 +60,26 @@ pre {
   }
 }
 
+h1:not(.page-title):not(#home-title)::before {
+  content: "◉ ";
+}
+
+h2::before {
+  content: "○ ";
+}
+
+h3::before {
+  content: "◌ ";
+}
+
+h4::before {
+  content: "⁖ ";
+}
+
+h5::before {
+  content: "◿ ";
+}
+
 code {
   color: #eee;
   background: $highlight-grey;
@@ -74,7 +94,7 @@ blockquote {
   border-left: 0.25em solid;
   margin: 1em;
   padding: 0 1em;
-  font-style: italic;
+  /* font-style: italic; */
 
   cite {
     font-weight: bold;
@@ -234,7 +254,7 @@ table {
   display: inline-block;
   margin-left: 0.6em;
 
-  & > a {
+  &>a {
     margin-left: 0.4em;
   }
 }
@@ -559,6 +579,7 @@ hr.post-end {
   ol {
     line-height: 1.8;
   }
+
   p {
     display: inline;
   }
@@ -621,7 +642,7 @@ hr.post-end {
     margin: 0;
   }
 
-  & > ul {
+  &>ul {
     list-style-type: none;
 
     ul ul {
@@ -650,6 +671,7 @@ hr.post-end {
     text-align: left;
     padding-right: 5px;
   }
+
   .prev-post {
     text-align: right;
     padding-left: 5px;
@@ -696,6 +718,7 @@ hr.post-end {
 
   figure.left {
     margin-left: -240px;
+
     p {
       text-align: left;
     }
@@ -703,6 +726,7 @@ hr.post-end {
 
   figure.right {
     margin-right: -240px;
+
     p {
       text-align: right;
     }
@@ -764,6 +788,7 @@ hr.post-end {
 }
 
 @media (max-width: 760px) {
+
   .hide-in-mobile,
   .site-nav.hide-in-mobile {
     display: none;
@@ -792,6 +817,7 @@ hr.post-end {
 }
 
 @media (max-width: 520px) {
+
   .content figure.left,
   .content figure.right {
     float: unset;
