@@ -525,6 +525,11 @@ hr.post-end {
     margin: 0;
     text-align: center;
 
+    figcaption {
+      padding-top: 0.25rem;
+      @include dimmed;
+    }
+
     p {
       font-size: 0.8em;
       font-style: italic;
