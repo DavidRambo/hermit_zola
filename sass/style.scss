@@ -60,6 +60,10 @@ pre {
   }
 }
 
+.page-title {
+  padding-top: 0.5rem;
+}
+
 h1:not(.page-title):not(#home-title)::before {
   content: "◉ ";
 }
