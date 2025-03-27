@@ -8,17 +8,22 @@
   <meta itemprop="description" content="{{config.description}}" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="{{get_url(path="apple-touch-icon.png")}}"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="{{get_url(path="favicon-32x32.png")}}" />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="16x16"
-    href="{{get_url(path="favicon-16x16.png")}}"
-  />
-  <link
-    rel="shortcut icon"
-    href="{{get_url(path="favicon.ico")}}"
-  />
+  <!-- This first if block is lifted from the Dracula theme for Zola. -->
+  {%- if config.extra.favicon %}
+      <link rel="shortcut icon" type="{{ config.extra.favicon_mimetype | default(value="image/x-icon") | safe }}" href="{{ config.extra.favicon | safe }}">
+  {% else %}
+    <link rel="icon" type="image/png" sizes="32x32" href="{{get_url(path="favicon-32x32.png")}}" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{get_url(path="favicon-16x16.png")}}"
+    />
+    <link
+      rel="shortcut icon"
+      href="{{get_url(path="favicon.ico")}}"
+    />
+  {% endif -%}
   <link rel="stylesheet" href="{{get_url(path="style.css")}}"/>
   {% if page.title %}
   <title>{{page.title}}</title>
